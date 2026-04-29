@@ -50,9 +50,10 @@ database = [{"id":1,"first_name":"Jeth","last_name":"Parmley","email":"jparmley0
 {"id":50,"first_name":"Rivi","last_name":"Bordone","email":"rbordone1d@geocities.jp","gender":"Agender","bank":"Lombard Bank Malta plc","city":"Fucheng","country":"China","salary":"$99682.90","expenses":"$837.97"}]
 
 
-// ACTIVIDAD 1:
 id_ingresado = Number(prompt("ingrese ID:"))
 
+
+// ACTIVIDAD 1:
 function obtener_datos(){
     database.forEach(i => {
         salario = i["salary"].replace("$", "")
@@ -66,8 +67,28 @@ function obtener_datos(){
     })
 }
 
-obtener_datos();
-
-
+obtener_datos()
+console.log("")
 
 // ACTIVIDAD 2:
+function clasificar_ahorro(){
+    database.forEach(i => {
+        let salario = i["salary"].replace("$", "")
+        let expensas = i["expenses"].replace("$", "")
+        
+        if (i["id"] === id_ingresado){
+        let ahorro_mensual = salario - expensas
+
+        let clasificacion =
+        ahorro_mensual >= 70000 ? "ahorro alto" :
+        salario < 30000 ? "ahorro bajo" :
+        "ahorro medio";
+
+        console.log(`salario: ${i["salary"]}`)
+        console.log(`expensas: ${i["expenses"]}`)
+        console.log(`${clasificacion}`)
+        }
+    })
+}
+
+clasificar_ahorro();
