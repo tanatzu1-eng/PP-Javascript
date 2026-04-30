@@ -1,4 +1,4 @@
-database = [{"id":1,"first_name":"Jeth","last_name":"Parmley","email":"jparmley0@t.co","gender":"Male","bank":"CITIZENS STATE BANK","city":"Caçapava","country":"Brazil","salary":"$99783.47","expenses":"$430.12"},
+[{"id":1,"first_name":"Jeth","last_name":"Parmley","email":"jparmley0@t.co","gender":"Male","bank":"CITIZENS STATE BANK","city":"Caçapava","country":"Brazil","salary":"$99783.47","expenses":"$430.12"},
 {"id":2,"first_name":"Jane","last_name":"Clemmey","email":"jclemmey1@sogou.com","gender":"Female","bank":"ICCREA BANCA S.P.A. - ISTITUTO CENTRALE DEL CREDITO COOPERATIVO (IN FORMA ABBREVIATA: ICCREA BANCA S.P.A.)","city":"Belize City","country":"Belize","salary":"$46558.58","expenses":"$467.58"},
 {"id":3,"first_name":"Amy","last_name":"Slamaker","email":"aslamaker2@ihg.com","gender":"Female","bank":"CITIZENS STATE BANK","city":"Roioen","country":"Indonesia","salary":"$34899.91","expenses":"$869.32"},
 {"id":4,"first_name":"Garvin","last_name":"Whitehorn","email":"gwhitehorn3@craigslist.org","gender":"Genderfluid","bank":"PINNACLE BANK","city":"El Agua Dulcita","country":"Honduras","salary":"$47907.04","expenses":"$139.96"},
@@ -48,72 +48,3 @@ database = [{"id":1,"first_name":"Jeth","last_name":"Parmley","email":"jparmley0
 {"id":48,"first_name":"Sandye","last_name":"Longland","email":"slongland1b@china.com.cn","gender":"Female","bank":"HUNTINGTON NATIONAL BANK","city":"Dorp Antriol","country":"Bonaire, Saint Eustatius and Saba ","salary":"$49085.97","expenses":"$147.21"},
 {"id":49,"first_name":"Nigel","last_name":"Jeffers","email":"njeffers1c@uol.com.br","gender":"Male","bank":"BMO HARRIS BANK","city":"Eustaquio Lopez","country":"Philippines","salary":"$58386.20","expenses":"$605.04"},
 {"id":50,"first_name":"Rivi","last_name":"Bordone","email":"rbordone1d@geocities.jp","gender":"Agender","bank":"Lombard Bank Malta plc","city":"Fucheng","country":"China","salary":"$99682.90","expenses":"$837.97"}]
-
-
-id_ingresado = Number(prompt("ingrese ID:"))
-
-
-function ahorro(usuario){
-    let salario = usuario["salary"].replace("$", "")
-    let expensas = usuario["expenses"].replace("$", "")
-
-    return Number(salario) - Number(expensas)
-}
-
-
-// ACTIVIDAD 1:
-function obtener_datos(){
-    database.forEach(i => {
-        if (i["id"] === id_ingresado){
-            console.log(`nombre completo: ${i["first_name"]} ${i["last_name"]}`)
-            console.log(`banco: ${i["bank"]}`)
-            console.log(`ahorro mensual: ${ahorro(i)}`)
-        }
-    })
-}
-
-obtener_datos()
-console.log("")
-
-
-// ACTIVIDAD 2:
-function clasificar_ahorro(){
-    database.forEach(i => {
-        if (i["id"] === id_ingresado){
-
-        let clasificacion =
-        ahorro(i) >= 70000 ? "ahorro alto" :
-        ahorro(i) < 30000 ? "ahorro bajo" :
-        "ahorro medio";
-
-        console.log(`salario: ${i["salary"]}`)
-        console.log(`expensas: ${i["expenses"]}`)
-        console.log(`${clasificacion}`)
-        }
-    })
-}
-
-clasificar_ahorro();
-console.log("")
-
-
-// ACTIVIDAD 3:
-const datos_bancos = database.reduce((acc, usuario) => {
-    if (!acc[usuario["bank"]]){
-        acc[usuario["bank"]] = {
-            cantidad_usuarios: 1,
-            ahorro_total: ahorro(usuario)
-        }
-
-    } else{
-        acc[usuario["bank"]].cantidad_usuarios ++,
-        acc[usuario["bank"]].ahorro_total + ahorro(usuario)
-    }
-
-    return acc
-}, {})
-
-console.log(datos_bancos)
-
-
-// ACTIVIDAD 4:
