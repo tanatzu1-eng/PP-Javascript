@@ -54,8 +54,8 @@ id_ingresado = Number(prompt("ingrese ID:"))
 
 
 function ahorro(usuario){
-    let salario = usuario["salary"].replace("$", "")
-    let expensas = usuario["expenses"].replace("$", "")
+    let salario = usuario.salary.replace("$", "")
+    let expensas = usuario.expenses.replace("$", "")
 
     return Number(salario) - Number(expensas)
 }
@@ -66,8 +66,8 @@ function ahorro(usuario){
 function obtener_datos(){
     database.forEach(i => {
         if (i["id"] === id_ingresado){
-            console.log(`nombre completo: ${i["first_name"]} ${i["last_name"]}`)
-            console.log(`banco: ${i["bank"]}`)
+            console.log(`nombre completo: ${i.first_name} ${i.last_name}`)
+            console.log(`banco: ${i.bank}`)
             console.log(`ahorro mensual: ${ahorro(i)}`)
         }
     })
@@ -89,8 +89,8 @@ function clasificar_ahorro(){
         ahorro(i) < 30000 ? "ahorro bajo" :
         "ahorro medio";
 
-        console.log(`salario: ${i["salary"]}`)
-        console.log(`expensas: ${i["expenses"]}`)
+        console.log(`salario: ${i.salary}`)
+        console.log(`expensas: ${i.expenses}`)
         console.log(`${clasificacion}`)
         }
     })
@@ -108,15 +108,15 @@ console.log("")
 // ============================================================================================================
 function registro_usuarios_bancos(){
     const acc_bancos = database.reduce((acc, usuario) => {
-        if (!acc[usuario["bank"]]){
-            acc[usuario["bank"]] = {
+        if (!acc[usuario.bank]){
+            acc[usuario.bank] = {
                 cantidad_usuarios: 1,
                 ahorro_total: ahorro(usuario)
             }
 
     } else{
-        acc[usuario["bank"]].cantidad_usuarios ++,
-        acc[usuario["bank"]].ahorro_total += ahorro(usuario)
+        acc[usuario.bank].cantidad_usuarios ++,
+        acc[usuario.bank].ahorro_total += ahorro(usuario)
     }
 
         return acc
