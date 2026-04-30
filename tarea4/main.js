@@ -62,6 +62,7 @@ function ahorro(usuario){
 
 
 // ACTIVIDAD 1:
+// ============================================================================================================
 function obtener_datos(){
     database.forEach(i => {
         if (i["id"] === id_ingresado){
@@ -74,9 +75,11 @@ function obtener_datos(){
 
 obtener_datos()
 console.log("")
+// ============================================================================================================
 
 
 // ACTIVIDAD 2:
+// ============================================================================================================
 function clasificar_ahorro(){
     database.forEach(i => {
         if (i["id"] === id_ingresado){
@@ -93,27 +96,40 @@ function clasificar_ahorro(){
     })
 }
 
-clasificar_ahorro();
+clasificar_ahorro()
 console.log("")
+// ============================================================================================================
+
+
+//
 
 
 // ACTIVIDAD 3:
-const datos_bancos = database.reduce((acc, usuario) => {
-    if (!acc[usuario["bank"]]){
-        acc[usuario["bank"]] = {
-            cantidad_usuarios: 1,
-            ahorro_total: ahorro(usuario)
-        }
+// ============================================================================================================
+function registro_usuarios_bancos(){
+    const acc_bancos = database.reduce((acc, usuario) => {
+        if (!acc[usuario["bank"]]){
+            acc[usuario["bank"]] = {
+                cantidad_usuarios: 1,
+                ahorro_total: ahorro(usuario)
+            }
 
     } else{
         acc[usuario["bank"]].cantidad_usuarios ++,
-        acc[usuario["bank"]].ahorro_total + ahorro(usuario)
+        acc[usuario["bank"]].ahorro_total += ahorro(usuario)
     }
 
-    return acc
-}, {})
+        return acc
+    }, {})
 
-console.log(datos_bancos)
+    console.log(acc_bancos)
+}
+
+registro_usuarios_bancos()
+// ============================================================================================================
 
 
 // ACTIVIDAD 4:
+// ============================================================================================================
+
+// ============================================================================================================
