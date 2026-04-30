@@ -101,22 +101,22 @@ console.log("")
 // ============================================================================================================
 
 
-//
+// elemento = bank
 
 
 // ACTIVIDAD 3:
 // ============================================================================================================
-function registro_usuarios_bancos(){
+function registro_usuarios_bancos(elemento){
     const acc_bancos = database.reduce((acc, usuario) => {
-        if (!acc[usuario.bank]){
-            acc[usuario.bank] = {
+        if (!acc[usuario[elemento]]){
+            acc[usuario[elemento]] = {
                 cantidad_usuarios: 1,
                 ahorro_total: ahorro(usuario)
             }
 
     } else{
-        acc[usuario.bank].cantidad_usuarios ++,
-        acc[usuario.bank].ahorro_total += ahorro(usuario)
+        acc[usuario[elemento]].cantidad_usuarios ++,
+        acc[usuario[elemento]].ahorro_total += ahorro(usuario)
     }
 
         return acc
@@ -125,11 +125,11 @@ function registro_usuarios_bancos(){
     console.log(acc_bancos)
 }
 
-registro_usuarios_bancos()
+registro_usuarios_bancos("bank")
 // ============================================================================================================
 
 
 // ACTIVIDAD 4:
 // ============================================================================================================
-
+registro_usuarios_bancos("country")
 // ============================================================================================================
