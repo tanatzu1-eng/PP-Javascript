@@ -104,6 +104,80 @@ const suma = numeros.reduce((acc, n) => acc + n, 0);
 
 
 
+// IMPORTAR y EXPORTAR:
+/*
+a diferencia de Python, no solo se requiere el import, sino que tambien hace falta
+exportar desde el otro extremo. hay multiples formas de hacerlo, todas funcionan igual.
+*/
+
+// actividades.js
+export const funcion_random = console.log('funcion random');
+
+// teorico.js
+import funcion_random from './actividades.js';
+
+
+// importar multiples archivos en una misma linea:
+// == // == // == // ==  // == // == // == // == // == // == // ==
+// actividades.js
+export const funcion_random1 = console.log('funcion random');
+export const funcion_random2 = console.log('funcion random');
+
+// teorico.js
+import {funcion_random1, funcion_random2} from './actividades.js';
+// == // == // == // ==  // == // == // == // == // == // == // ==
+
+
+// importar sin llaves:
+// == // == // == // ==  // == // == // == // == // == // == // ==
+// actividades.js
+export default funcion_random;
+
+// teorico.js
+import funcion_random from './actividades.js';
+// == // == // == // ==  // == // == // == // == // == // == // ==
+
+
+
+// VALIDAR TIPO DE DATO:
+/*
+con un = se asigna valor, con dos = se valida que sea lo mismo, con tres = se valida que
+sea lo mismo y que tambien que sea del mismo tipo de datos
+*/
+
+5 == "5"; // True
+
+5 === "5"; // False
+
+
+
+// OPERADORES LOGICOS (traduccion de Python a Javascript):
+// Python: and
+// Js: &&
+
+// Python: or
+// Js: ||
+
+// Python: not
+// Js: !
+
+
+
+// CONDICIONAL RARO:
+const condicional_raro = 5 > 10 ? "5 es mayor a 10" : "5 es menor a 10"; // condicional ? True : False
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -117,22 +117,19 @@ console.log(productos_filtrados)
 
 
 
-// 4/30:
+// 5/30:
 console.log('')
 console.log('-----------------------------------------------------------------------------------------------')
-console.log('actividades 4/30:')
+console.log('actividades 5/30:')
 
 
 // actividad 1 =
 console.log('')
 console.log('actividad 1 =')
 
+let edad = 20
+let ternario = edad > 18? "es mayor de edad": "es menor de edad";
 
-// actividad 2 =
-console.log('')
-console.log('actividad 2 =')
+console.log(ternario)
 
 
-// actividad 3 =
-console.log('')
-console.log('actividad 3 =')
