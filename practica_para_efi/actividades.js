@@ -80,6 +80,53 @@ console.log('actividades 3/30:')
 console.log('')
 console.log('actividad 1 =')
 
+const numeros2 = [5, 12, 8, 130, 44]
+
+const numeros_x_3 = numeros2.map((n) => n * 3)
+
+console.log(numeros_x_3)
+
+
+// actividad 2 =
+console.log('')
+console.log('actividad 2 =')
+
+const mayores_a_10 = numeros2.filter((n) => n > 10)
+
+console.log(mayores_a_10)
+
+
+// actividad 3 =
+console.log('')
+console.log('actividad 3 =')
+
+const suma = numeros2.reduce((acc, n) => acc + n, 0)
+
+console.log(suma)
+
+
+// actividad 4 =
+console.log('')
+console.log('actividad 4 =')
+
+const productos = [{nombre: 'producto1', precio: 100}, {nombre: 'producto2', precio: 110}, {nombre: 'producto3', precio: 90}];
+
+const productos_filtrados = productos.filter((p) => p.precio < 100).map((n) => n.nombre);
+
+console.log(productos_filtrados)
+
+
+
+// 4/30:
+console.log('')
+console.log('-----------------------------------------------------------------------------------------------')
+console.log('actividades 4/30:')
+
+
+// actividad 1 =
+console.log('')
+console.log('actividad 1 =')
+
 
 // actividad 2 =
 console.log('')
@@ -89,5 +136,3 @@ console.log('actividad 2 =')
 // actividad 3 =
 console.log('')
 console.log('actividad 3 =')
-
-

@@ -42,8 +42,8 @@ no requiere llaves y es preferible simplificar la sintaxis
 
 
 
-// OBJETO:
-// es lo mismo que un diccionario de python, tiene algunas idferencias pero son irrelevantes de momento
+// OBJETO (diccionario):
+// es lo mismo que un diccionario de python, tiene algunas diferencias pero son irrelevantes de momento
 // metodo 1:
 const persona = {
     nombre: 'juan',
@@ -58,8 +58,56 @@ console.log(persona.nombre); // se accede con punto, no con corchetes como en py
 
 
 // destructuring objetos en la funcion
-const destructuring_objetos = ({nombre, edad}) => `mi nombre es ${nombre} y tengo ${edad} anios`
+const destructuring_objetos = ({nombre, edad}) => `mi nombre es ${nombre} y tengo ${edad} anios`;
 
-console.log(destructuring_objetos({nombre: 'noel', edad: 20}))
+console.log(destructuring_objetos({nombre: 'noel', edad: 20}));
+/*
+solo hay que encerrar entre corchetes para aclarar que es una
+estructura "clave: valor" tanto en la funcion como en la salida
+*/
+
+
+
+// MAP:
+/*
+funciona similar a un bucle For, recorre por elemento, modificando cada uno segun la logica,
+la diferencia entre ambos es que el MAP almacena los datos en una lista nueva
+*/
+
+let numeros = [1, 2, 3, 4, 5]; // lista de elementos
+
+const dobles = numeros.map((n) => n * 2); // crea una nueva lista de elementos
+
+console.log(dobles);
+
+
+
+// FILTER:
+// es literalmente filtrar, poner una condicion a una lista de datos y filtrar solo los que cumplan la condicion
+
+let numeros2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const numeros_mayores_a_cinco = numeros2.filter((n) => n > 5);
+
+console.log(numeros_mayores_a_cinco);
+
+
+
+// REDUCE:
+/*
+en realidad no se usa mucho, su funcion hasta puede quedar reemplazada por filter y map, pero no esta de mas
+entenderlo. es bastante similar a un sum() de Python, solo que mas flexible porque te permite condicionar la
+suma filtrando los datos. pero eso es algo que hace filter(), por eso no se usa mucho
+*/
+
+const suma = numeros.reduce((acc, n) => acc + n, 0);
+
+
+
+
+
+
+
+
 
 
