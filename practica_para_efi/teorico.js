@@ -154,6 +154,15 @@ sea lo mismo y que tambien que sea del mismo tipo de datos
 // OPERADORES LOGICOS (traduccion de Python a Javascript):
 // Python: and
 // Js: &&
+/*
+el && tiene varias funciones, otra de ellas es que actua como condicional sin else, por ejemplo:
+user.isAdmin ? ("acceso concedido") : ("acceso denegado");
+user.isAdmin && ("acceso concedido")
+
+como se ve en el ejemplo, lo requiere de un else, si la condicion se cumple, ejecuta,
+pero si no se cumple, no ejecuta nada, a diferencia del condicional que si o si
+tiene que devolver un else
+*/
 
 // Python: or
 // Js: ||
