@@ -173,7 +173,52 @@ tiene que devolver un else
 
 
 // CONDICIONAL RARO:
-const condicional_raro = 5 > 10 ? "5 es mayor a 10" : "5 es menor a 10"; // condicional ? True : False
+const condicional_raro = 5 > 10 ? "5 es mayor a 10" : "5 es menor a 10"; // condicion ? True : False
+
+
+
+// ESTADOS:
+/*
+con useState se puede establecer un estado para un objeto y alterarlo en tiempo real
+sin necesidad de recargar la pagina completa, ahi es cuando React demuestra su verdadera utilidad
+*/
+
+// obviamente esta funcion no va a funcionar porque esto no es un jsx, por lo que no puede interpretar html
+function contador() {
+    const [estado_actual, sumar] = useState(0)
+
+    return (
+        <div>
+            <p>Clicks: {estado_actual}</p>
+
+            <button onClick = {() => sumar(estado_actual + 1)} >Clickea Aqui!</button>
+        </div>
+    )
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
