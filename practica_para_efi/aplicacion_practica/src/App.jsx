@@ -7,6 +7,7 @@ import Tarjeta from "./components/tarjeta";
 import Footer from "./components/footer"
 
 
+
 // ============================================================================
 // Simulacion de Database:
 // ============================================================================
@@ -21,10 +22,11 @@ const database = [
     {id: 8, titulo: "producto8", precio: 8000, descripcion: "descripcion descriptiva del prodcto en cuestion"},
     {id: 9, titulo: "producto9", precio: 9000, descripcion: "descripcion descriptiva del prodcto en cuestion"},
     {id: 10, titulo: "producto10", precio: 10000, descripcion: "descripcion descriptiva del prodcto en cuestion"},
-  ]
+  ];
 // ============================================================================
 
 
+/*
 // ============================================================================
 // Contador:
 // ============================================================================
@@ -46,6 +48,7 @@ function Mi_contador() {
 // ============================================================================
 
 
+
 // ============================================================================
 // Frase_que_desaparece:
 // ============================================================================
@@ -61,13 +64,97 @@ function Frase_que_desaparece() {
   )
 };
 // ============================================================================
+*/
+
+
+
+// ============================================================================
+// boton que dice hola (actividad 1 de la clase 11/30):
+// ============================================================================
+function Hola() {
+  const [estado_actual, cambiar_estado] = useState(true);
+
+  return (
+    <div className = 'col-start-4 col-span-6'>
+      <button onClick = {() => cambiar_estado(!estado_actual)} className = 'bg-amber-500 rounded-2xl p-4 m-4 hover:p-5 hover:m-3 text-white shadow-amber-400 shadow-sm hover:shadow-md' >Escribir/Quitar "Hola"</button>
+
+      {estado_actual && <p>hola</p>}
+    </div>
+  );
+};
+// ============================================================================
+
+
+
+// ============================================================================
+// tres botones (actividad 2 de la clase 11/30):
+// ============================================================================
+const nombres = [
+  {id: 1, nombre: "Juan", edad: 20},
+  {id: 2, nombre: "Martin", edad: 20},
+  {id: 3, nombre: "Pepe", edad: 20},
+];
+
+function Tres_botones() {
+  const [nombre_actual, cambiar_nombre] = useState("");
+
+  return (
+    <>
+    <button
+        onClick = {() => cambiar_nombre("")}
+        className='p-3 m-3 hover:p-4 hover:m-2 bg-cyan-950 text-white rounded-2xl col-span-10 col-start-2'
+    >Default</button>
+
+    <div className = 'col-start-4 col-span-6'>
+
+        {nombres.map((p) => (
+          <button
+            key = {p.id}
+            nombre = {p.nombre}
+            edad = {p.edad}
+            onClick={() => cambiar_nombre(`, ${p.nombre}`)}
+            className='p-3 m-3 hover:p-4 hover:m-2 bg-cyan-400 text-white rounded-2xl'
+          >Boton {p.nombre}</button>
+        ))}
+
+        <p>Hola{nombre_actual}!</p>
+      </div>
+    </>
+  );
+};
+// ============================================================================
+
+
+
+// ============================================================================
+// input onChange (actividad 3 de la clase 11/30):
+// ============================================================================
+function Input_onchange() {
+  const [actual, cambiar] = useState("");
+
+  return (
+    <>
+      <div
+        className = 'col-start-3 col-span-8'>
+        <input
+          onChange = {(e) => cambiar(e.target.value)}
+          className = 'bg-fuchsia-300 rounded-2xl p-2 text-black m-3'
+          type="text" />
+        
+        <p className = 'text-black bg-amber-200 p-3 m-3 rounded-2xl'>{actual}</p>
+      </div>
+    </>
+  );
+};
+// ============================================================================
+
 
 
 // a futuro podria incorporar esto:
 // .filter((p) => p.precio < 5000)
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -89,7 +176,7 @@ export default function App() {
 
         <hr className = 'my-10' />
 
-        <Ui>
+        {/* <Ui>
           <Mi_contador />
         </Ui>
 
@@ -97,6 +184,22 @@ export default function App() {
 
         <Ui>
           <Frase_que_desaparece />
+        </Ui> */}
+
+        <Ui>
+          <Hola />
+        </Ui>
+
+        <hr className = 'my-10' />
+
+        <Ui>
+          <Tres_botones />
+        </Ui>
+
+        <hr className = 'my-10' />
+
+        <Ui>
+          <Input_onchange />
         </Ui>
 
 
