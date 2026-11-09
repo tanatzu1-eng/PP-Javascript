@@ -198,7 +198,20 @@ function contador() {
 
 
 
+// EVENTOS:
+/*
+un evento es todo lo que ocurre en una pagina, mover el mouse, hacer un click, tocar una tecla, etc..
+hay varios comandos para registrar un evento, todos empiezan con "on":
+- onClick = click en un elemento
+- onChange = cambia el contenido de un input (por ejemplo un buscador,
+cuando puede filtrar por cada letra que escribo sin necesidad de que yo toque enter)
+- onSubmit = se envia un formulario (este requiere el comando preventDefault() para evitar
+que se recargue la pagina)
+- onMouseEnter = el mouse pasa por encima de un elemento, sin necesidad de hacer click
 
+a cada uno de esos comandos se le asigna una funcion, la cual se ejecuta en tiempo real
+cuando ocurra el evento en cuestion
+*/
 
 
 
